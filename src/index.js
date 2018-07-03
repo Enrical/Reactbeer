@@ -1,9 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './style.css';
-import StyleList from './stylelist/stylelist.js';
+import Stylelist from './Stylelist/stylelist.js';
+import App from './App';
 
 ReactDOM.render(
-    <StyleList />,
+    <App />,
   document.getElementById('app')
 );
