@@ -9,10 +9,10 @@ body{
 #menu{
     display: flex;
 }
-#singup{
+/* #singup{
     display: flex;
     flex-flow: nowrap;
-}
+} */
 
 nav{
     position: absolute;
@@ -24,3 +24,31 @@ nav{
 .navbar{
     margin: 0px;
 }
+.ok{
+    width: 20px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+button{
+    background-color: #222222;
+    border-radius: 50%;
+}
+
+button:active :hover {
+    background-color: #222222;
+    box-shadow: 0 5px #666;
+    transform: rotate(270deg);
+    /* animation-name: myrotate; */
+}
+
+/* @keyframes myrotate {
+    from {rotate: 0deg;}
+    to {rotate: 270deg;}
+}
+ */
+
+
+/* #singup{
+    text-align: right;
+} */

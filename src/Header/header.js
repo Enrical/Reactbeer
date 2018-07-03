@@ -2,6 +2,7 @@ import React from 'react';
 import './header.css';
 
 export default class Header extends React.Component {
+
     render() {
         return (
             <nav class="navbar navbar-inverse">
@@ -24,25 +25,26 @@ export default class Header extends React.Component {
                         </ul>
                     </div>
                 </div>
-                <nav class="navbar navbar-dark bg text-warning">
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
+                <nav class="navbar navbar-left navbar-dark bg text-warning">
+                    <button class="navbar-toggler bg" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <img class="ok bg"  src="http://pngimg.com/uploads/beer/beer_PNG2376.png"></img>
+                        {/* <span class="navbar-toggler-icon"></span> */}
                     </button>
                 </nav>
+                
+                <ul class="nav navbar-nav navbar-right"  id="singup">
+                <li>
+                    <a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a>
+                </li>
+                <li>
+                    <a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a>
+                </li>
+            </ul>
+
             </div>
 
 
-            <ul class="nav navbar-nav navbar-right"  id="singup">
-                <li>
-                    <a href="#">
-                        <span class="glyphicon glyphicon-user"></span> Sign Up</a>
-                </li>
-                <li>
-                    <a href="#">
-                        <span class="glyphicon glyphicon-log-in"></span> Login</a>
-                </li>
-            </ul>
+           
         </div>
     </nav>
     
