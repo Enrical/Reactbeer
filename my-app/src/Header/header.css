@@ -1,0 +1,59 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Encode Sans Condensed', sans-serif;
+    padding: 0px;
+}
+
+#menu{
+    display: flex;
+}
+/* #singup{
+    display: flex;
+    flex-flow: nowrap;
+} */
+
+nav{
+    position: absolute;
+    margin: 0px;
+}
+.bg{
+    color:blue;
+}
+.navbar{
+    margin: 0px;
+}
+.ok{
+    width: 20px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+button{
+    background-color: #222222;
+    border-radius: 50%;
+}
+
+button:active :hover {
+    background-color: #222222;
+    box-shadow: 0 5px #666;
+    transform: rotate(270deg);
+    /* animation-name: myrotate; */
+}
+
+/* @keyframes myrotate {
+    from {rotate: 0deg;}
+    to {rotate: 270deg;}
+}
+ */
+
+
+/* #singup{
+    text-align: right;
+} */
+
+/* .title{
+    width: 80%;
+    margin: 5px 50%;
+} */
