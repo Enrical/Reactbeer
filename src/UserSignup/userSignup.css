@@ -8,10 +8,6 @@
     padding: 1rem;
 }
 
-.formContent {
-    margin-top: 3rem;
-}
-
 .form {
     display: flex;
     justify-content: center;
@@ -29,6 +25,11 @@
     margin: 1rem;
 }
 
+.formInputEmail {
+    width: 420px;
+    margin: 1rem;
+}
+
 .submit {
     width: 420px;
     padding: 1rem;
@@ -36,4 +37,5 @@
     background-color: black;
     color: gold;
     border-radius: 10px;
+    margin: 1rem;
 }

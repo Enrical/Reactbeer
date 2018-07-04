@@ -1,12 +1,12 @@
 import React from 'react';
-import './contact.css';
+import './userSignup.css';
 
-export default class Contact extends React.Component {
+export default class UserSignup extends React.Component {
     render () {
         return (
             <div className="box">
-                <div className="sectionHead">Contact Us</div>
-                
+                <div className="sectionHead">User Signup</div>
+
                 <div className="formContent">
                     <span className="form">
                         <div>
@@ -18,19 +18,20 @@ export default class Contact extends React.Component {
 
                     <span className="form">
                         <div>
-                            <input id="email" type="text" name="email" className="formInput" placeholder="Please enter your email *"/>
+                            <input id="username" type="text" name="username" className="formInput" placeholder="Please choose a username *"/>
                         
-                            <input id="phone" type="phone" name="phone" className="formInput" placeholder="Please enter your phone number *"/>
+                            <input id="password" type="password" name="password" className="formInput" placeholder="Please choose a password *"/>
                         </div>
                     </span>
                     <span className="form">
                         <div>
-                            <textarea id="message" name="message" class="formMessage" placeholder="Send us a message *" rows="4"></textarea>
+                            <input id="email" type="email" name="email" className="formInputEmail" placeholder="Please enter your email *"/>
                         </div>
                     </span>
+                    
                     <span className="form">
                         <div>
-                            <input type="submit" class="submit" value="Send message"/>
+                            <input type="submit" class="submit" value="Sign Up"/>
                         </div>
                     </span>
                 </div>
