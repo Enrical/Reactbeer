@@ -1,0 +1,30 @@
+.info {
+    height: 300px;
+    width: 100%;
+    /* background-color: rgba(182, 155, 0, 0.87); */
+    border-bottom: 2px solid yellow;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    display: flex;
+    color: whitesmoke;
+    padding: 1rem;
+    justify-content: space-around;
+}
+
+.pic, .userInfo, .aboutMe {
+    flex-basis: 250px;
+    border: 1px solid white;
+    padding: 1rem;
+}
+
+.pic {
+
+}
+
+.userInfo {
+    align-items: center;
+}
+
+.aboutMe {
+
+}
