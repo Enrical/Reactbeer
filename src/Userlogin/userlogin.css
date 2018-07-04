@@ -17,8 +17,8 @@ form{
     flex-flow: column;
 }
 .user{
-    font-family: 'Encode Sans Condensed', sans-serif;
-    color: wheat;
+    font-family: 'Ultra', serif;
+    color: #d39c2f;
     font-size: 4rem;
 }
 .singup{
