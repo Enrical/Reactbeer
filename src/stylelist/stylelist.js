@@ -40,6 +40,7 @@ export default class StyleList extends React.Component {
 
         return (
             <div className="box">
+            <div className="list">
                 {
                     styles.map((style, i) => {
                         return (
@@ -47,6 +48,7 @@ export default class StyleList extends React.Component {
                         )
                     })
                 }
+            </div>
             </div>
         );
     }
