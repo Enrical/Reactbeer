@@ -7,7 +7,7 @@ export default class App extends React.Component {
     render() {
         return (
         <div>
-            <Header ok="ok" />
+            <Header />
             <Page />
         </div>
         )
