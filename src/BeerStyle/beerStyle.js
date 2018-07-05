@@ -7,8 +7,10 @@ export default class BeerStyle extends React.Component {
         
         return (
             <div className="styleBox">
-                <div>{ name }</div>
-                <div>{ description }</div>
+                <div className="pad">
+                    <div className="name">{ name }</div>
+                    <div className="description">{ description }</div>
+                </div>
             </div>
         )
     }

@@ -41,5 +41,3 @@ export default class StyleList extends React.Component {
         )    
     }
 }
-
-//  <BeerStyle key={i} name={style.style_name} description={style.description} />
