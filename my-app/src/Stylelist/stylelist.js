@@ -8,42 +8,31 @@ export default class StyleList extends React.Component {
     constructor (props) {
         super (props);
         this.state = {
-            styles : [
-                {
-                    name: 'Style 1',
-                    description : 'description1'
-                },
-                {
-                    name: 'Style 2',
-                    description : 'description 2'
-                },
-                {
-                    name: 'Style 3',
-                    description : 'description 3'
-                },
-                {
-                    name: 'Style 4',
-                    description : 'description 4'
-                },
-                {
-                    name: 'Style 5',
-                    description : 'description 5'
-                }
-
-            ]
+            styles : []
         }
     }
 
+    // componentDidMount() {
+    //     fetch('http://www.cbp-exercises.test/beer/Final_project/public/api/style')
+    //         .then(response => response.json())
+    //         .then(json => {
+    //             this.setState({
+    //             styles: json.styles
+    //         })
+    //     },);
+    // }
+
     render() {
+
         const {styles} = this.state;
         console.log(styles);
 
-        return (
+        return (            
             <div className="box">
                 {
-                    styles.map((style, i) => {
+                    this.state.style.map((style, i) => {
                         return (
-                            <BeerStyle key={i} name={style.name} description={style.description} />
+                            <BeerStyle key={i} name={style.style_name} description={style.description} />
                         )
                     })
                 }

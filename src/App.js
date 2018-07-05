@@ -13,10 +13,10 @@ export default class App extends React.Component {
         <div>
             <Header />
             {/* <Page /> */}
-            {/* <Stylelist /> */}
+            <Stylelist />
             {/* <UserProfile /> */}
             {/* <Contact /> */}
-            <UserSignup />
+            {/* <UserSignup /> */}
         </div>
         )
     }
