@@ -6,6 +6,7 @@ import Stylelist from './Stylelist/stylelist.js';
 import UserProfile from './UserProfile/userProfile.js';
 import Contact from './Contact/contact.js';
 import UserSignup from './UserSignup/userSignup.js';
+import WheelSimulation from './WheelSimulation/wheelSImulation.js';
 
 export default class App extends React.Component {
     render() {
@@ -13,10 +14,11 @@ export default class App extends React.Component {
         <div>
             <Header />
             {/* <Page /> */}
-            <Stylelist />
+            {/* <Stylelist /> */}
             {/* <UserProfile /> */}
             {/* <Contact /> */}
             {/* <UserSignup /> */}
+            <WheelSimulation />
         </div>
         )
     }
