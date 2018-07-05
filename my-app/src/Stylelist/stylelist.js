@@ -5,38 +5,41 @@ import BeerStyle from '../BeerStyle/beerStyle.js';
 
 
 export default class StyleList extends React.Component {
-    constructor (props) {
-        super (props);
+    constructor(props) {
+        super(props);
+
         this.state = {
-            styles : []
+            style: []
         }
     }
 
-    // componentDidMount() {
-    //     fetch('http://www.cbp-exercises.test/beer/Final_project/public/api/style')
-    //         .then(response => response.json())
-    //         .then(json => {
-    //             this.setState({
-    //             styles: json.styles
-    //         })
-    //     },);
-    // }
-
+    componentWillMount() {
+        fetch('http://www.cbp-exercises.test:8080/final_project/Final_project/public/api/style/category')
+            .then(response => response.json())
+            .then(json => {
+                this.setState ({
+                    style: json
+                });
+            });
+    }
+    
     render() {
-
-        const {styles} = this.state;
-        console.log(styles);
-
-        return (            
-            <div className="box">
+        const style = this.state;
+        
+        return (
+            <div>
                 {
-                    this.state.style.map((style, i) => {
-                        return (
-                            <BeerStyle key={i} name={style.style_name} description={style.description} />
+                    this.state.style.map(post => {
+                        return (                      
+                        <BeerStyle 
+                            name={style.beer_style}
+                            description={style.description} />
                         )
                     })
-                }
+                }    
             </div>
-        );
+        )    
     }
 }
+
+//  <BeerStyle key={i} name={style.style_name} description={style.description} />
