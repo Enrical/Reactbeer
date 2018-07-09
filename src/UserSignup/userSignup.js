@@ -2,12 +2,33 @@ import React from 'react';
 import './userSignup.css';
 
 export default class UserSignup extends React.Component {
+    
+    constructor(props){
+        super(props);
+        this.state = {
+            users: []
+        }
+    }
+
+    componentWillMount(){
+        fetch('http://www.cbp-exercises.test/beer/Final_project/public/api/user')
+        .then(response => response.json())
+        .then(json => {
+            this.setState({
+                users: json
+            })
+        })
+    }
+    
     render () {
+        console.log(this.state);
+
         return (
             <div className="box">
                 <div className="sectionHead">User Signup</div>
 
                 <div className="formContent">
+                    <form method="post" action="http://www.cbp-exercises.test/beer/Final_project/public/api/user">
                     <span className="form">
                         <div>
                             <input id="firstname" type="text" name="first_name" className="formInput" placeholder="Please enter your first name *"/>
@@ -31,9 +52,10 @@ export default class UserSignup extends React.Component {
                     
                     <span className="form">
                         <div>
-                            <input type="submit" class="submit" value="Sign Up"/>
+                            <input type="submit" class="submit" value="signup"/>
                         </div>
                     </span>
+                    </form>
                 </div>
             </div>
         )

@@ -14,8 +14,8 @@ export default class App extends React.Component {
         <div>
             <Header />
             {/* <Page /> */}
-            <Stylelist />
-            {/* <UserProfile /> */}
+            {/* <Stylelist /> */}
+            <UserProfile />
             {/* <Contact /> */}
             {/* <UserSignup /> */}
             {/* <WheelSimulation /> */}

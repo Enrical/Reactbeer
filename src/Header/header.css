@@ -5,14 +5,20 @@ body{
     font-family: 'Encode Sans Condensed', sans-serif;
     padding: 0px;
 }
+@media only screen and (min-width: 400px) {
+    nav .all{
+        width: 100%;
+    }    
+}
 
 #menu{
     display: flex;
 }
-/* #singup{
+
+.signup{
     display: flex;
-    flex-flow: nowrap;
-} */
+    margin-left: auto;
+}
 
 nav{
     position: absolute;
@@ -31,29 +37,43 @@ nav{
 }
 
 button{
+    margin-top: 1px;
     background-color: #222222;
     border-radius: 50%;
+    animation: mymove 3s;
+    animation-fill-mode: forwards;
+}
+button:focus{
+    outline: none;
 }
 
-button:active :hover {
+button:active {
     background-color: #222222;
     box-shadow: 0 5px #666;
-    transform: rotate(270deg);
-    /* animation-name: myrotate; */
+    animation: back 5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes back {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(270deg);}
+}
+
+@keyframes mymove {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(360deg);}
 }
 
 /* @keyframes myrotate {
     from {rotate: 0deg;}
     to {rotate: 270deg;}
-}
- */
-
+} */
 
 /* #singup{
     text-align: right;
-} */
+}
 
-/* .title{
+.title{
     width: 80%;
     margin: 5px 50%;
 } */

@@ -18,6 +18,7 @@
 .formInput {
     width: 200px;
     margin: 1rem;
+    border-radius: 10px;
 }
 
 #message {
@@ -28,6 +29,7 @@
 .formInputEmail {
     width: 420px;
     margin: 1rem;
+    border-radius: 10px;
 }
 
 .submit {

@@ -16,9 +16,12 @@ form{
     display: flex;
     flex-flow: column;
 }
+input{
+    border-radius: 40%;
+}
 .user{
     font-family: 'Ultra', serif;
-    color: #d39c2f;
+    /* color: #d39c2f; */
     font-size: 4rem;
 }
 .singup{
