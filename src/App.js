@@ -12,13 +12,13 @@ export default class App extends React.Component {
     render() {
         return (
         <div>
-             <Header />
-            {/* <Page />
-             <Stylelist /> 
-            <UserProfile />
-            <Contact /> 
-            <UserSignup />  */} */}
-            <WheelSimulation />
+            <Header />
+            {/* <Page /> */}
+            {/* <Stylelist /> */}
+            {/* <UserProfile /> */}
+            {/* <Contact /> */}
+            <UserSignup />
+            {/* <WheelSimulation /> */}
         </div>
         )
     }

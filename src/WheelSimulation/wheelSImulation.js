@@ -21,9 +21,9 @@ export default class WheelSimulation extends React.Component {
     }
 
     onClick(){
-        this.setState({
-            color: 
-        })
+        // this.setState({
+        //     color: 
+        // })
     }
 
 
