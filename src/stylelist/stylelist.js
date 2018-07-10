@@ -14,7 +14,7 @@ export default class StyleList extends React.Component {
     }
 
     componentWillMount() {
-        fetch('http://www.cbp-exercises.test:8080/final_project/Final_project/public/api/style')
+        fetch('http://www.cbp-exercises.test/project_test/Final_project/public/api/style')
             .then(response => response.json())
             .then(json => {
                 this.setState ({

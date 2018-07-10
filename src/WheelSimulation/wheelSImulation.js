@@ -1,43 +1,36 @@
 import React from 'react';
 
+import SpiderGraph from '../libs/spidergraph/index.js';
 
-export default class WheelSimulatio extends React.Component {
+
+export default class WheelSimulation extends React.Component {
 
     constructor(props){
         super(props);
         this.state = {
-            posts: []
+            color: null,
+            bitterness: null,
+            aroma: null,
+            hop: null, 
+            malt: null,
+            fruit: null, 
+            smoke: null, 
+            sweet: null, 
+            sour: null,
         }
     }
 
-    componentWillMount(){
-        fetch('http://www.cbp-exercises.test/Final_project/public/api/attribute')
-        .then(response => response.json())
-        .then(json => {
-            this.setState({
-                posts: json
-            })
+    onClick(){
+        this.setState({
+            color: 
         })
     }
 
+
     render(){
-         console.log(this.state);
         return(
-            <div className="wall">
-            
-            {  
-
-                this.state.posts.map(post => {
-                    return (
-                        <form method="POST" action="http://www.cbp-exercises.test/project_test/Final_project/public/api/search">
-                           <label>{post.attribute_name} </label>
-                            <input type="text" />
-                      
-                      </form>
-
-                    )
-                }
-        )}
-            </div>
-        )}
-}
+            <canvas className="wall" id="canvas" width="800" height="600" onClick={this.onClick.bind(this)}>
+            </canvas>
+            )
+        {SpiderGraph.SpiderGraph.init('canvas')}}
+    }
