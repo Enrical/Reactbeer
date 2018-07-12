@@ -8,6 +8,7 @@ export default class WheelSimulation extends React.Component {
     constructor(props){
         super(props);
         this.state = {
+            alcohol: null,
             color: null,
             bitterness: null,
             aroma: null,

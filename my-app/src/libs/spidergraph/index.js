@@ -155,13 +155,13 @@ export  function Circle(layer_index, attr_index, pos_x, pos_y) {
       'alcohol', 
       'color', 
       'bitterness',
-      'smokiness',
-      'fruitiness',
-      'malt',
-      'sourness',
-      'funk',
       'aroma',
-      'sweetness'
+      'hop',
+      'malt',
+      'fruit',
+      'smoke',
+      'sweet',
+      'sour'
     ];
 
 SpiderGraph.init = function(id){
