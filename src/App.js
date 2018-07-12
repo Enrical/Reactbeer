@@ -7,6 +7,7 @@ import UserProfile from './UserProfile/userProfile.js';
 import Contact from './Contact/contact.js';
 import UserSignup from './UserSignup/userSignup.js';
 import WheelSimulation from './WheelSimulation/wheelSimulation.js';
+import ListStyle from './WheelSimulation/wheelSimulation.js';
 
 export default class App extends React.Component {
     render() {
@@ -18,7 +19,8 @@ export default class App extends React.Component {
             {/* <UserProfile /> */}
             {/* <Contact /> */}
             {/* <UserSignup /> */}
-            <WheelSimulation />
+            {/* <WheelSimulation /> */}
+            <ListStyle />
         </div>
         )
     }

@@ -178,7 +178,7 @@ SpiderGraph.init = function(id){
 
           canvas.addEventListener('click', e => {
             SpiderGraph.component.onClick(e);
-           // return (SpiderGraph.attribute[circle.attr_index] +  ' ' + circle.layer_index);
+          //  return (SpiderGraph.attribute[circle.attr_index] +  ' ' + circle.layer_index);
           });
         });
       }    

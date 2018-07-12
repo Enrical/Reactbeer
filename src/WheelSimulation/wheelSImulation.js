@@ -1,6 +1,7 @@
 import React from 'react';
 // import './wheelstyle.css';
 import SpiderGraph from '../libs/spidergraph/index.js';
+import BeerStyle from '../Stylelist/stylelist.js';
 
 
 export default class WheelSimulation extends React.Component {
@@ -19,6 +20,7 @@ export default class WheelSimulation extends React.Component {
             // sweetness: null, 
             // sourness: null,
         }
+        
           this.handleSubmit = this.handleSubmit.bind(this);
     }
 
@@ -31,6 +33,7 @@ export default class WheelSimulation extends React.Component {
     handleSubmit(e) {
         //preventDefault prevents page reload   
         e.preventDefault();
+        // this.props.onSearch(this.state.searchText);
         /*A call back to the onAdd props. The current
             *state is passed as a param
             */
@@ -64,19 +67,76 @@ export default class WheelSimulation extends React.Component {
     }
 
 
+
     render(){
-        console.log(SpiderGraph)
+        // console.log(SpiderGraph)
         return(
             <div className="box">
-            <canvas className="wall" id="canvas" width="800" height="600" >
-            </canvas>
-            <span className="form">
-            <input type="submit" class="submit" value="Submit"/>
-            </span>
+                <canvas className="wall" id="canvas" width="800" height="600" >
+                </canvas>
+                <form method="POST" action="http://www.cbp-exercises.test/beer/Final_project/public/api/user" onSubmit={this.handleSubmit}>
+                <span className="form">
+                    <input type="submit" class="submit" value="Submit">
+                    
+                    </input>
+                </span>
+            </form>
             </div>
-            )
+        )
     }
+}
+
+export class ListStyle extends React.Component{
+constructor(props) {
+    super(props);
+
+    this.state = {
+        styles: []
     }
+    // this.handleAddStyle = this.handleAddStyle.blind(this);
+}
+
+    // handleAddStyle(style){
+    //     console.log(style);
+    //     var style = {}
+
+    //     this.props.onAdd(this.state.style);
+    // }
+
+
+    componentWillMount() {
+        fetch('http://www.cbp-exercises.test/beer/Final_project/public/api/search')
+            .then(response => response.json())
+            .then(json => {
+                this.setState ({
+                    styles: json
+                });
+            });
+    }
+
+    render() {
+        return(
+            <div className="box">
+            <WheelSimulation />
+            <div className="list">
+            {
+                        this.state.styles.map((style, i) => {
+                            return(
+                                <BeerStyle
+                                // key={i}
+                                // name={style.style_name}
+                                description={style.description}
+                                />
+
+                            )   
+                        })
+                    }
+            </div>
+            </div>
+        )
+
+    }
+}
 
     // export default class WheelSimulation extends React.Component {
 
