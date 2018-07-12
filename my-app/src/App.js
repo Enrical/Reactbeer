@@ -5,16 +5,17 @@ import Header from './Header/header.js';
 import Stylelist from './Stylelist/stylelist.js';
 // import UserProfile from './UserProfile/userProfile.js';
 import Contact from './Contact/contact.js'
+import WheelSimulation from './WheelSimulation/wheelSImulation.js'
 
 export default class App extends React.Component {
     render() {
         return (
         <div>
-            <Header />
+            {/* <Header /> */}
             {/* <Page /> */}
-            <Stylelist />
+            {/* <Stylelist /> */}
             {/* <UserProfile /> */}
-            {/* <Contact /> */}
+             <WheelSimulation />
         </div>
         )
     }

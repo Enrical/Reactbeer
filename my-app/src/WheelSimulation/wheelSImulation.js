@@ -18,19 +18,30 @@ export default class WheelSimulation extends React.Component {
             sweet: null, 
             sour: null,
         }
+
     }
 
-    onClick(){
-        // this.setState({
-        //     color: 
-        // })
+    componentDidMount()
+    {
+        SpiderGraph.init('canvas'); 
+        SpiderGraph.component = this;
+    }
+
+    onClick(e){
+        let input = SpiderGraph.instance.canvasClicked(e);
+        console.log(input);
+        let state = Object.assign({}, this.state);
+        state[input.layer] = input.level;
+        this.setState(state);
+        console.log(this.state);
     }
 
 
     render(){
+        console.log(SpiderGraph)
         return(
-            <canvas className="wall" id="canvas" width="800" height="600" onClick={this.onClick.bind(this)}>
+            <canvas className="wall" id="canvas" width="800" height="600" >
             </canvas>
             )
-        {SpiderGraph.SpiderGraph.init('canvas')}}
+    }
     }

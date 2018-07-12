@@ -1,4 +1,4 @@
-export function Circle(layer_index, attr_index, pos_x, pos_y) {
+export  function Circle(layer_index, attr_index, pos_x, pos_y) {
     this.layer_index = layer_index;
     this.attr_index = attr_index;
     this.pos_x = pos_x;
@@ -26,7 +26,7 @@ export function Circle(layer_index, attr_index, pos_x, pos_y) {
     }
   }
   
-  export function SpiderGraph(center_x, center_y, attr_count, layer_count) {
+  export default function SpiderGraph(center_x, center_y, attr_count, layer_count) {
     this.circles = [];
     this.polygon = [];
     this.center_x = center_x;
@@ -126,11 +126,31 @@ export function Circle(layer_index, attr_index, pos_x, pos_y) {
   
       return null;
     }
+
+
+    this.canvasClicked = function(e){
+      
+      let circle = this.circle_by_point(e.layerX, e.layerY);
+      console.log(circle);
+              if(circle !== null) {
+                this.polygon[circle.attr_index] = circle;
+                this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+                this.draw(this.ctx);
+                console.log(SpiderGraph.attribute[circle.attr_index]);
+                console.log(circle.layer_index);
+                return {
+                  layer: SpiderGraph.attribute[circle.attr_index], 
+                  level: circle.layer_index
+                };
+              }
+              return null;
+    }
   
     
     
     
   }
+  SpiderGraph.instance = null;
   SpiderGraph.attribute = [
       'alcohol', 
       'color', 
@@ -145,25 +165,20 @@ export function Circle(layer_index, attr_index, pos_x, pos_y) {
     ];
 
 SpiderGraph.init = function(id){
+
               document.addEventListener('DOMContentLoaded', () => {
                   let canvas = document.getElementById(id);
                   let ctx = canvas.getContext('2d');
                   let graph = new SpiderGraph(300, 300, 10, 6);
                   graph.generate();
                   graph.draw(ctx);
-  
+                  graph.canvas = canvas;
+                  graph.ctx = ctx;
+                  SpiderGraph.instance = graph;
+
             canvas.addEventListener('click', e => {
-              let circle = graph.circle_by_point(e.layerX, e.layerY);
-              if(circle !== null) {
-                graph.polygon[circle.attr_index] = circle;
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
-                graph.draw(ctx);
-                console.log(SpiderGraph.attribute[circle.attr_index]);
-                console.log(circle.layer_index);
-                
-              }
+              SpiderGraph.component.onClick(e);
+             // return (SpiderGraph.attribute[circle.attr_index] +  ' ' + circle.layer_index);
             });
           });
-        }
-    
-SpiderGraph.init('canvas')
+        }    
