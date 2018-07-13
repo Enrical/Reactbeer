@@ -29,7 +29,7 @@ export default class StyleList extends React.Component {
             <div className="box">
                 <div className="list">
                     {
-                        this.state.styles.map((style, i) => {
+                        this.props.data.map((style, i) => {
                             return (                      
                             <BeerStyle 
                                 key={i}

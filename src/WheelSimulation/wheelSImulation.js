@@ -1,7 +1,8 @@
 import React from 'react';
 // import './wheelstyle.css';
 import SpiderGraph from '../libs/spidergraph/index.js';
-import BeerStyle from '../Stylelist/stylelist.js';
+import BeerStyle from '../BeerStyle/beerstyle.js';
+import StyleList from '../Stylelist/stylelist.js';
 
 
 export default class WheelSimulation extends React.Component {
@@ -15,6 +16,7 @@ export default class WheelSimulation extends React.Component {
             aroma: null,
             hop: null, 
             malt: null,
+            data:[]
             // fruitiness: null, 
             // smokiness: null, 
             // sweetness: null, 
@@ -22,6 +24,7 @@ export default class WheelSimulation extends React.Component {
         }
         
           this.handleSubmit = this.handleSubmit.bind(this);
+          this.displaydata = this.displaydata.bind(this);
     }
 
     componentDidMount()
@@ -61,9 +64,24 @@ export default class WheelSimulation extends React.Component {
           .then(response => {
               return response.json();
           })
-          .then(function(data){
-              console.log(data)
+          .then((data) =>{
+            console.log(data)
+            this.setState({data: data})
           });
+    }
+
+    displaydata(){
+        console.log(this.state.data);
+        this.setState({showWheel: false});
+        // this.state.styles.map((style, i) => {
+        //     return(
+        //         <StyleList 
+        //         key={i.category_id}
+        //         name={style.style_name}
+        //         description={style.description} 
+        //         />
+        //     )   
+        // })
     }
 
 
@@ -74,13 +92,14 @@ export default class WheelSimulation extends React.Component {
             <div className="box">
                 <canvas className="wall" id="canvas" width="800" height="600" >
                 </canvas>
-                <form method="POST" action="http://www.cbp-exercises.test/beer/Final_project/public/api/user" onSubmit={this.handleSubmit}>
-                <span className="form">
-                    <input type="submit" class="submit" value="Submit">
-                    
-                    </input>
-                </span>
-            </form>
+                <button onClick={this.displaydata}>BEER
+                {/* <BeerStyle 
+                                key={i}
+                                name={style.style_name}
+                                description={style.description} 
+                                /> */}
+                                </button>
+                <StyleList data={this.state.data} />
             </div>
         )
     }
@@ -91,7 +110,8 @@ constructor(props) {
     super(props);
 
     this.state = {
-        styles: []
+        styles: {},
+        showWheel: true
     }
     // this.handleAddStyle = this.handleAddStyle.blind(this);
 }
@@ -104,33 +124,59 @@ constructor(props) {
     // }
 
 
-    componentWillMount() {
-        fetch('http://www.cbp-exercises.test/beer/Final_project/public/api/search')
-            .then(response => response.json())
-            .then(json => {
-                this.setState ({
-                    styles: json
-                });
-            });
+
+    displaydata(){
+        console.log(this.state.beerData);
+        this.setState({showWheel: false});
+        // this.state.styles.map((style, i) => {
+        //     return(
+        //         <StyleList 
+        //         key={i.category_id}
+        //         name={style.style_name}
+        //         description={style.description} 
+        //         />
+        //     )   
+        // })
     }
+
+    // componentWillMount() {
+    //     fetch('http://www.cbp-exercises.test/beer/Final_project/public/api/search', {
+    //     method: 'get',
+    //     dataType: "JSON",
+    //     headers: {
+    //       "Content-Type": "application/json; charset=utf-8",
+    //     }})
+    //         .then(response => response.json())
+    //         .then(data => {
+    //             this.setState ({
+    //                 styles: data.style
+    //             });
+    //         // .then(response => {
+    //         //     return response.json();
+    //         // })
+    //         });
+    // }
 
     render() {
         return(
             <div className="box">
-            <WheelSimulation />
+            {this.state.showWheel && <WheelSimulation />}
+            <button onClick={this.displaydata}>BEER
+            </button>
+            {!this.state.showWheel && <StyleList />}
             <div className="list">
-            {
+            {console.log(data.style)}
+            {/* {
                         this.state.styles.map((style, i) => {
                             return(
-                                <BeerStyle
-                                // key={i}
-                                // name={style.style_name}
-                                description={style.description}
+                                <StyleList 
+                                key={i.category_id}
+                                name={style.style_name}
+                                description={style.description} 
                                 />
-
                             )   
                         })
-                    }
+                    } */}
             </div>
             </div>
         )
